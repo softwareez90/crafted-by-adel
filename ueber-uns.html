@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über uns - Crafted by Adel</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+        :root {
+            --primary-color: #2563eb; /* Modern Blue */
+            --primary-dark: #1d4ed8;
+            --secondary-color: #0f172a; /* Slate 900 */
+            --text-color: #334155; /* Slate 700 */
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- NAVIGATION STYLES --- */
+        .nav {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* CTA Button in Nav */
+        .nav-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Menu Handling (CSS only approach for simplicity) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 24px;
+                gap: 16px;
+            }
+            
+            .nav-menu {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* --- CONTENT SPACER (Just for demo) --- */
+        .content-spacer {
+            flex: 1;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- FOOTER STYLES --- */
+        .footer {
+            background-color: var(--secondary-color);
+            color: #94a3b8; /* Slate 400 */
+            padding-top: 64px;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            max-width: 300px;
+            margin-bottom: 24px;
+        }
+
+        .footer-heading {
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+        }
+
+        .footer-address {
+            font-style: normal;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b; /* Slate 800 */
+            padding: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; color: #1f2937; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 4rem 0; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.2s; }
+    .btn-primary { background: var(--primary, #2563eb); color: white; }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                Crafted by <span>Adel</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Startseite</a></li>
+                <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+                <li><a href="leistungen.html" class="nav-link">Leistungen</a></li>
+                <li><a href="impressum.html" class="nav-link">Impressum</a></li>
+                <li><a href="kontakt.html" class="nav-link nav-cta">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+  
+  <main>
+    <section class="hero section" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; padding: 100px 0; text-align: center;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; line-height: 1.2;">IT-Lösungen mit Handschrift.</h1>
+        <p style="font-size: 1.25rem; margin-bottom: 40px; color: #cbd5e1; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Bei <strong>Crafted by Adel</strong> verstehen wir Technologie nicht als Massenware. Wir entwickeln maßgeschneiderte Cloud-Architekturen und Managed Services, die präzise auf die DNA Ihres Unternehmens abgestimmt sind.
+        </p>
+        <a href="#kontakt" class="btn" style="background-color: #3b82f6; color: white; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.3s ease;">Lernen Sie uns kennen</a>
+    </div>
+</section>
+
+<section class="section" style="padding: 80px 0; background-color: #ffffff;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 60px;">
+        <div style="flex: 1; min-width: 300px;">
+            <h2 style="color: #0f172a; font-size: 2.5rem; margin-bottom: 25px; border-left: 5px solid #3b82f6; padding-left: 20px;">Unsere Philosophie: Handwerk trifft High-Tech</h2>
+            <p style="color: #475569; line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem;">
+                Der Name "Crafted by Adel" ist unser Versprechen. In einer Welt von automatisierten Standardlösungen bringen wir den Faktor Mensch zurück in die IT. Wir glauben daran, dass eine robuste IT-Infrastruktur genauso sorgfältig geplant und gebaut werden muss wie ein architektonisches Meisterwerk.
+            </p>
+            <p style="color: #475569; line-height: 1.8; font-size: 1.1rem;">
+                Wir sind keine anonyme Hotline. Wir sind Ihre strategischen Partner für die digitale Transformation. Ob komplexe Cloud-Migrationen, hybride Infrastrukturen oder lückenlose Cyber-Security – wir "craften" Lösungen, die nicht nur funktionieren, sondern Ihr Geschäft beflügeln.
+            </p>
+        </div>
+        <div style="flex: 1; min-width: 300px;">
+            <div style="background-color: #f1f5f9; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <h3 style="color: #0f172a; margin-bottom: 20px;">Warum Adel?</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; color: #334155;">
+                        <span style="color: #3b82f6; margin-right: 10px; font-weight: bold;">✓</span> Persönliche Ansprechpartner statt Ticket-Nummern
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; color: #334155;">
+                        <span style="color: #3b82f6; margin-right: 10px; font-weight: bold;">✓</span> Proaktives Monitoring statt reaktives Feuerwehr-Spielen
+                    </li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; color: #334155;">
+                        <span style="color: #3b82f6; margin-right: 10px; font-weight: bold;">✓</span> Transparente Kostenstrukturen ohne versteckte Gebühren
+                    </li>
+                    <li style="display: flex; align-items: center; color: #334155;">
+                        <span style="color: #3b82f6; margin-right: 10px; font-weight: bold;">✓</span> Deutsche Datensouveränität & DSGVO-Konformität
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 80px 0; background-color: #f8fafc;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="color: #0f172a; font-size: 2.5rem; margin-bottom: 15px;">Unsere Kernwerte</h2>
+            <p style="color: #64748b; max-width: 600px; margin: 0 auto;">Das Fundament, auf dem wir Ihre digitale Stabilität aufbauen.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Card 1 -->
+            <div class="card" style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                <div style="font-size: 2rem; color: #3b82f6; margin-bottom: 20px;">🛡️</div>
+                <h3 style="color: #0f172a; margin-bottom: 15px; font-size: 1.5rem;">Sicherheit First</h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    In der Cloud gibt es keine Kompromisse. Wir implementieren Zero-Trust-Architekturen und modernste Verschlüsselung, damit Ihre Daten genau dort bleiben, wo sie hingehören: bei Ihnen.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                <div style="font-size: 2rem; color: #3b82f6; margin-bottom: 20px;">🚀</div>
+                <h3 style="color: #0f172a; margin-bottom: 15px; font-size: 1.5rem;">Skalierbare Performance</h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Ihr Unternehmen wächst, Ihre IT wächst mit. Wir designen Infrastrukturen, die flexibel auf Lastspitzen reagieren und sich dynamisch an Ihre Geschäftsentwicklung anpassen.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+                <div style="font-size: 2rem; color: #3b82f6; margin-bottom: 20px;">🤝</div>
+                <h3 style="color: #0f172a; margin-bottom: 15px; font-size: 1.5rem;">Ehrliche Partnerschaft</h3>
+                <p style="color: #64748b; line-height: 1.6;">
+                    Wir verkaufen Ihnen nichts, was Sie nicht brauchen. Unsere Beratung basiert auf technischer Notwendigkeit und wirtschaftlicher Vernunft, nicht auf Vertriebszielen.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 100px 0; background: linear-gradient(to right, #1e293b, #0f172a); color: white; text-align: center;">
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Bereit für IT, die einfach funktioniert?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 40px; color: #cbd5e1;">
+            Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Infrastruktur optimieren können. Unverbindlich und auf Augenhöhe.
+        </p>
+        <a href="#kontakt" class="btn" style="background-color: white; color: #0f172a; padding: 15px 40px; text-decoration: none; border-radius: 6px; font-weight: 700; display: inline-block; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);">Gespräch vereinbaren</a>
+    </div>
+</section>
+  </main>
+  
+  <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <h3>Crafted by Adel</h3>
+                <p>Ihr Partner für skalierbare Cloud-Services und zuverlässiges Managed-IT. Wir gestalten die digitale Zukunft Ihres Unternehmens.</p>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link">Startseite</a></li>
+                    <li><a href="ueber-uns.html" class="footer-link">Über uns</a></li>
+                    <li><a href="leistungen.html" class="footer-link">Leistungen</a></li>
+                    <li><a href="impressum.html" class="footer-link">Impressum</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Kontakt</h4>
+                <address class="footer-address">
+                    Eisenbahnstraße 70<br>
+                    04315 Leipzig<br>
+                    Deutschland
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 Crafted by Adel. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+</body>
+</html>

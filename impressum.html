@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum - Crafted by Adel</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+        :root {
+            --primary-color: #2563eb; /* Modern Blue */
+            --primary-dark: #1d4ed8;
+            --secondary-color: #0f172a; /* Slate 900 */
+            --text-color: #334155; /* Slate 700 */
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- NAVIGATION STYLES --- */
+        .nav {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* CTA Button in Nav */
+        .nav-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Menu Handling (CSS only approach for simplicity) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 24px;
+                gap: 16px;
+            }
+            
+            .nav-menu {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* --- CONTENT SPACER (Just for demo) --- */
+        .content-spacer {
+            flex: 1;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* --- FOOTER STYLES --- */
+        .footer {
+            background-color: var(--secondary-color);
+            color: #94a3b8; /* Slate 400 */
+            padding-top: 64px;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.025em;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            max-width: 300px;
+            margin-bottom: 24px;
+        }
+
+        .footer-heading {
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-link {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+        }
+
+        .footer-address {
+            font-style: normal;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b; /* Slate 800 */
+            padding: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; color: #1f2937; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 4rem 0; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.2s; }
+    .btn-primary { background: var(--primary, #2563eb); color: white; }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                Crafted by <span>Adel</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Startseite</a></li>
+                <li><a href="ueber-uns.html" class="nav-link">Über uns</a></li>
+                <li><a href="leistungen.html" class="nav-link">Leistungen</a></li>
+                <li><a href="impressum.html" class="nav-link">Impressum</a></li>
+                <li><a href="kontakt.html" class="nav-link nav-cta">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+  
+  <main>
+    <section class="hero section" style="background-color: #f0f4f8; padding: 100px 0; border-bottom: 1px solid #dee2e6;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center;">
+        <h1 style="color: #1a202c; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 3rem; margin-bottom: 1rem;">Impressum</h1>
+        <p style="color: #4a5568; font-family: 'Segoe UI', Roboto, sans-serif; font-size: 1.25rem; max-width: 700px; margin: 0 auto;">
+            Rechtliche Informationen und Anbieterkennzeichnung für Crafted by Adel.
+        </p>
+    </div>
+</section>
+
+<section class="section" style="padding: 80px 0; background-color: #ffffff;">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+        <div class="card" style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 40px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);">
+            <h2 style="color: #2d3748; font-family: 'Segoe UI', Roboto, sans-serif; font-size: 1.5rem; border-bottom: 2px solid #3182ce; padding-bottom: 15px; margin-bottom: 30px; display: inline-block;">Angaben gemäß § 5 TMG</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+                <div class="company-details">
+                    <h3 style="color: #718096; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;">Unternehmen</h3>
+                    <p style="font-family: 'Segoe UI', Roboto, sans-serif; color: #1a202c; font-size: 1.125rem; line-height: 1.6; font-weight: 600;">
+                        Crafted by Adel
+                    </p>
+                    <p style="font-family: 'Segoe UI', Roboto, sans-serif; color: #4a5568; font-size: 1.125rem; line-height: 1.6;">
+                        Eisenbahnstraße 70<br>
+                        04315 Leipzig<br>
+                        Deutschland
+                    </p>
+                </div>
+
+                <div class="representative-details">
+                    <h3 style="color: #718096; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;">Vertreten durch</h3>
+                    <p style="font-family: 'Segoe UI', Roboto, sans-serif; color: #1a202c; font-size: 1.125rem; line-height: 1.6;">
+                        <strong>Geschäftsführer:</strong><br>
+                        Adel Wojcik
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 60px 0; background-color: #f7fafc;">
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+        <div class="legal-content" style="font-family: 'Segoe UI', Roboto, sans-serif; color: #4a5568; line-height: 1.8;">
+            
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #2d3748; font-size: 1.25rem; margin-bottom: 15px; font-weight: 700;">Haftung für Inhalte</h3>
+                <p>
+                    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #2d3748; font-size: 1.25rem; margin-bottom: 15px; font-weight: 700;">Haftung für Links</h3>
+                <p>
+                    Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+                </p>
+            </div>
+
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #2d3748; font-size: 1.25rem; margin-bottom: 15px; font-weight: 700;">Urheberrecht</h3>
+                <p>
+                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+                </p>
+            </div>
+
+            <div style="border-top: 1px solid #cbd5e0; padding-top: 30px;">
+                <h3 style="color: #2d3748; font-size: 1.25rem; margin-bottom: 15px; font-weight: 700;">Streitschlichtung</h3>
+                <p>
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+                    <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style="color: #3182ce; text-decoration: none; font-weight: 600;">https://ec.europa.eu/consumers/odr</a>.
+                    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+  </main>
+  
+  <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <h3>Crafted by Adel</h3>
+                <p>Ihr Partner für skalierbare Cloud-Services und zuverlässiges Managed-IT. Wir gestalten die digitale Zukunft Ihres Unternehmens.</p>
+            </div>
+
+            <!-- Navigation Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link">Startseite</a></li>
+                    <li><a href="ueber-uns.html" class="footer-link">Über uns</a></li>
+                    <li><a href="leistungen.html" class="footer-link">Leistungen</a></li>
+                    <li><a href="impressum.html" class="footer-link">Impressum</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Kontakt</h4>
+                <address class="footer-address">
+                    Eisenbahnstraße 70<br>
+                    04315 Leipzig<br>
+                    Deutschland
+                </address>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 Crafted by Adel. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+</body>
+</html>
